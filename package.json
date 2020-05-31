@@ -1,0 +1,19 @@
+{
+  "name": "path-to-fullstack",
+  "version": "1.0.0",
+  "description": "Everything that i'm learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eLucis198/path-to-fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eLucis198/path-to-fullstack/issues"
+  },
+  "homepage": "https://github.com/eLucis198/path-to-fullstack#readme"
+}
