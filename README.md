@@ -222,7 +222,7 @@ You need to install the "types" of your dependencies for the IntelliSense to wor
 
 > A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.
 
-Points out error in TS code.
+Points out error in TS code and corrects then.
 
 ### Setup
 
@@ -234,31 +234,31 @@ To initialize run `yarn eslint --init` and configure it.
 
 Respond the following questions:
 
-**How would you like to use ESLint?**
-To check syntax, find problems, and enforce code style
+  **How would you like to use ESLint?**
+  To check syntax, find problems, and enforce code style
 
-**What type of modules does your project use?**
-JavaScript modules (import/export)
+  **What type of modules does your project use?**
+  JavaScript modules (import/export)
 
-**Which framework does your project use?**
-None of these
+  **Which framework does your project use?**
+  None of these
 
-**Does your project use TypeScript?**
-Yes
+  **Does your project use TypeScript?**
+  Yes
 
-**Where does your code run?**
-Node
+  **Where does your code run?**
+  Node
 
-**How would you like to define a style for your project?**
-Use a popular style guide
+  **How would you like to define a style for your project?**
+  Use a popular style guide
 
-**Which style guide do you want to follow?**
-Standard: https://github.com/standard/standard
+  **Which style guide do you want to follow?**
+  Standard: https://github.com/standard/standard
 
-**What format do you want your config file to be in?**
-JavaScript
+  **What format do you want your config file to be in?**
+  JavaScript
 
-Select **Yes**
+  Select **Yes**
 
 Now you can delete package-lock.json and run `yarn`
 
