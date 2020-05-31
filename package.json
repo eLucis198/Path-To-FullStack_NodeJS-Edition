@@ -4,7 +4,7 @@
   "description": "Everything that i'm learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:server": "ts-node-dev --respawn --transpileOnly src/server.ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/eLucis198/path-to-fullstack/issues"
   },
-  "homepage": "https://github.com/eLucis198/path-to-fullstack#readme"
+  "homepage": "https://github.com/eLucis198/path-to-fullstack#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "ts-node-dev": "^1.0.0-pre.44"
+  }
 }
