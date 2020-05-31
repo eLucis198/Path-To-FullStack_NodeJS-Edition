@@ -230,7 +230,37 @@ Install the extension ESLint.
 
 Run `yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin` to install.
 
-To initialize run `yarn eslint --init` and configure it. (Now you can delete package-lock.json and run `yarn`)
+To initialize run `yarn eslint --init` and configure it.
+
+Respond the following questions:
+
+**How would you like to use ESLint?**
+To check syntax, find problems, and enforce code style
+
+**What type of modules does your project use?**
+JavaScript modules (import/export)
+
+**Which framework does your project use?**
+None of these
+
+**Does your project use TypeScript?**
+Yes
+
+**Where does your code run?**
+Node
+
+**How would you like to define a style for your project?**
+Use a popular style guide
+
+**Which style guide do you want to follow?**
+Standard: https://github.com/standard/standard
+
+**What format do you want your config file to be in?**
+JavaScript
+
+Select **Yes**
+
+Now you can delete package-lock.json and run `yarn`
 
 Add line to .eslintrc.js
 ```js
@@ -262,6 +292,8 @@ All done, now TypeScript is running with ESLint :ok_hand:
 
 
 <h2 align="center">Prettier</h2>
+
+ **Prettier enforces a code style but ESLint already does that, you don't need to use Prettier anymore.**
 
 > Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 
