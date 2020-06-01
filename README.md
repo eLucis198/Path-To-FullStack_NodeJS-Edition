@@ -162,7 +162,7 @@ Add this line to the tsconfig.json file
 ```json
 {
     "compilerOptions": {
-      "outDir": "./dist/"
+      "outDir": "./build/"
     }
 }
 ```
@@ -374,3 +374,65 @@ test('sum two numbers', () => {
 ```
 
 Now you can simply run with `yarn test`.
+
+<h2 align="center">TypeORM</h2>
+
+> TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript and JavaScript (ES5, ES6, ES7, ES8).
+
+### Setup
+
+Things to install:
+
+For the ORM
+`yarn add typeorm`
+`yarn add reflect-metadata`
+`yarn add @types/node -D`
+
+Database driver
+`yarn add sqlite3 -D`
+`yarn add pg
+
+Files configuration:
+
+Your tsconfig.json should have this lines.
+```json
+  "compilerOptions": {
+    "lib": [
+        "es5",
+        "es6"
+    ],
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true
+  }
+```
+
+Create a file named `ormconfig.json`
+```json
+{
+   "type": "sqlite",
+   "database": "database.sqlite",
+   "synchronize": true,
+   "logging": false,
+   "entities": [
+      "src/entity/**/*.ts"
+   ],
+   "migrations": [
+      "src/migration/**/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration",
+      "subscribersDir": "src/subscriber"
+   }
+}
+```
+This is a basic configuration.
+Create a folder named `entity` and other named `migration` inside the src/ folder.
