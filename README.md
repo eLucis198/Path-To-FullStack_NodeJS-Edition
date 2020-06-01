@@ -293,7 +293,7 @@ All done, now TypeScript is running with ESLint :ok_hand:
 
 <h2 align="center">Prettier</h2>
 
- **Prettier enforces a code style but ESLint already does that, you don't need to use Prettier anymore.**
+ **I don't know if it's a new update but ESLint is already correcting the code, so I won't use Prettier.**
 
 > Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
 
@@ -309,3 +309,68 @@ extends: [
   'standard'
 ],
 ```
+
+<h2 align="center">Jest</h2>
+
+> Jest is a delightful JavaScript Testing Framework with a focus on simplicity.
+
+### Setup
+
+Run `yarn add jest @types/jest ts-jest -D` to install it.
+
+Now add jest to the .eslintrc.js file, it should look like this now:
+
+```javascript
+env: {
+    es6: true,
+    node: true,
+    jest: true
+  },
+```
+
+Now for the configuration run `yarn jest --init`.
+
+  **Would you like to use Jest when running "test" script in "package.json"?**
+  Y
+
+  **Choose the test environment that will be used for testing**
+  node
+
+  **Do you want Jest to add coverage reports?**
+  y
+
+  **Automatically clear mock calls and instances between every test?**
+  y
+
+It creates the `jest.config.js` file.
+
+You'll have to make some changes to the file.
+
+```js
+  collectCoverageFrom: [
+      'src/**/*.ts'
+    ],
+```
+
+```js
+  coverageDirectory: '__tests__/coverage',
+```
+
+```js
+  transform: {
+    '^.+\\.ts$': 'ts-jest'
+  },
+```
+
+Now you can create a folder `__test__` at the root of the project and place all the tests inside it.
+
+I'll put one example here.
+
+exaple.spec.ts
+```js
+test('sum two numbers', () => {
+  expect(1 + 1).toBe(2)
+})
+```
+
+Now you can simply run with `yarn test`.
