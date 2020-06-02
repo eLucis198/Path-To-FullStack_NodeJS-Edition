@@ -4,8 +4,10 @@
   "description": "Everything that i'm learning",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
     "dev:server": "ts-node-dev --respawn --transpileOnly src/server.ts",
-    "test": "jest"
+    "test": "SET NODE_ENV=test&& jest"
   },
   "repository": {
     "type": "git",
@@ -38,6 +40,8 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "ts-node-dev": "^1.0.0-pre.44"
+    "pg": "^8.2.1",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typeorm": "^0.2.25"
   }
 }

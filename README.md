@@ -29,6 +29,11 @@ I'll be dividing this README in four different categories.
     * [ESLint](#ESLint)
     * [Prettier](#Prettier)
 
+* **[DOING](#DOING)**
+    * [dotenv](#dotenv)
+    * [TypeORM](#TypeORM)
+    * [Jest](#Jest)
+
 <h1 align="center">EXTENSIONS</h1>
 
 <p align="center">VSCode Extensions.</p>
@@ -309,6 +314,29 @@ extends: [
   'standard'
 ],
 ```
+<h1 align="center">DOING</h1>
+
+<p align="center"><bold>Technologies that I'm tryng to learn right now.</bold></p.>
+
+<h2 align="center">dotenv</h2>
+
+> Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+
+### Setup
+
+`yarn add dotenv`
+
+Import and call it as soon as possible in your project
+
+```ts
+import dotenv from 'dotenv'
+
+dotenv.config()
+```
+
+### How I learned
+
+* https://www.youtube.com/watch?v=2G_mWfG0DZE
 
 <h2 align="center">Jest</h2>
 
