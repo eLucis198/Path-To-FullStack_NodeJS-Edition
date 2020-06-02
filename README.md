@@ -10,14 +10,6 @@ This file was various things, now it turned in a tutorial on how to use some of 
 
 * **[EXTENSIONS](#EXTENSIONS)**
 * **[DONE](#DONE)**
-    * [NodeJS and npm](#NodeJS)
-    * [Yarn](#Yarn)
-    * [Git and GitHub](#Git-and-GitHub)
-    * [Express](#Express)
-    * [TypeScript](#TypeScript)
-    * [ESLint](#ESLint)
-    * [Prettier](#Prettier)
-
 * **[DOING](#DOING)**
     * [dotenv](#dotenv)
     * [TypeORM](#TypeORM)
@@ -28,7 +20,7 @@ This file was various things, now it turned in a tutorial on how to use some of 
 Extensions for Visual Studio Code.
 
 * [EditorConfig for VS Code](#EditorConfig)
-* [ESLint]
+* [ESLint Extension](#Eslint-Extension)
 * [Material Icon Theme](#Material-Icon-Theme)
 
 <h2 align="center">EditorConfig</h2>
@@ -37,20 +29,27 @@ Extensions for Visual Studio Code.
 
 Makes it possible to share editor settings via a file (`.editorconfig`) located in the root directory of your project.
 
-<h2 align="center">ESLint</h2>
+<h2 align="center">ESLint Extension</h2>
 
 > Integrates ESLint into VS Code.
 
-Just the extension part of ESLint, The entire configuration is described in its section.
+Just the extension part of ESLint, the entire configuration is described in the [ESLint](#ESLint) section.
 
 <h2 align="center">Material Icon Theme</h2>
 
-Greatly improves file icons.
+Greatly improves the icons for your files.
 
-<h1 align="center">DONE</h1>
+# DONE
 
-<p align="center">Technologies that I've somewhat learned and that I'm already using.</p.>
+Technologies that I have already learned in some way and already integrated into the project.
 
+* [NodeJS and npm](#NodeJS)
+* [Yarn](#Yarn)
+* [Git and GitHub](#Git-and-GitHub)
+* [Express](#Express)
+* [TypeScript](#TypeScript)
+* [ESLint](#ESLint)
+* [Prettier](#Prettier) (Not using)
 
 <h2 align="center">NodeJS</h2>
 
@@ -58,17 +57,17 @@ Greatly improves file icons.
 
 NodeJS is your runtime, npm your package manager.
 Follow through the [installation](https://nodejs.org/en/) and both will be installed and ready to use.
+For more control over the verions installed download via chocolatey.
 
 ### Using NodeJS and npm
 
-`npm init` - Creates a package.json file.
+You can run these in your command line.
 
+`npm init` - Creates a package.json file in the current folder.
 `npm install` - Adds dependencies to the package.json file and install them at the node_modules folder.
-
 `node index.js` - Runs the index.js file in NodeJS.
 
-`package.json` is your project configuration file, edit the `scripts` part and create customizable Node commands.
-
+The `package.json` file is where your project settings are, you can create custom Node commands by editing the `scripts` part.
 
 <h2 align="center">Yarn</h2>
 
