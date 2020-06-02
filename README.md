@@ -56,9 +56,6 @@ Technologies that I have already learned in some way and already integrated into
 > [Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.](https://nodejs.org/en/)
 
 NodeJS is your runtime, npm your package manager.
-
-### Setup
-
 Follow through the [installation](https://nodejs.org/en/) and both will be installed and ready to use.
 For more control over the verions installed download via chocolatey.
 
@@ -80,13 +77,12 @@ The `package.json` file is where your project settings are, you can create custo
 
 Well, I just think Yarn is easier to use.
 
-`npm install -g yarn` - Installs Yarn globally.
-
-`yarn init` - Creates the package.json file.
+`npm install -g yarn` - Install Yarn globally.
 
 Run `Get-ExecutionPolicy` on PowerShell, if the result is `Restricted` then run `Set-ExecutionPolicy RemoteSigned` so you can use Yarn.
 
-If you ever use npm in your repo you can delete the package-lock.json file and run `yarn` to install everything again.
+If you ever use npm in your repo you can delete the package-lock.json file and run `yarn`.
+
 
 <h2 align="center">Git and GitHub</h2>
 
@@ -148,46 +144,25 @@ So I can focus more in coding I'm using GitHub Desktop 'cause it's way easier :s
 
 > Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-HTTP requests and routing.
-
-### Setup
+Best thing ever for HTTP requests and routing.
 
 `yarn add express` - Installs the express dependency.
+
 
 <h2 align="center">TypeScript</h2>
 
 >TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
 
-This may be the best thing I found out here haha, makes your code much clearer, looks like OOP :laughing:
+This may be the best thing I found out here haha, makes your code much more clear, looks like OOP :laughing:
 
-### Setup
+### Setting up
 
 `yarn global add typescript` - Installs typescript globally in your machine.
+`yarn add typescript --d` - Installs typescript as a development dependency.
 
-`yarn add typescript -D` - Installs typescript locally as a development dependency.
+### Transpile - tsc + ts-node-dev
 
-### Typescript Compiling
-
-NodeJS doesn't understand TypeScript, that's why we need to use a tool to convert TypeScript into JavaScript.
-
-### ts-node-dev + tsc
-
-`ts-node-dev` - Executes your TypeScript code and restarts at every update.
-
-`tsc` - Converts the TypeScrit code to JavaScript to the specified folder.
-
-### How to use
-
-For automated transpiles I'll be using **ts-node-dev**.
-Install it by running `yarn add ts-node-dev -D`.
-
-Add this line to your packge.json file.
-```json
-  "scripts": {
-    "dev:server": "ts-node-dev --respawn --transpileOnly src/index.ts"
-  },
-```
-Now run `yarn dev:server`. Your project will run and it transpiles automatically at every code update.
+You'll use `ts-node-dev` to transpile the code automatically for you while you develop and you'll use `tsc` to generate a ./dist.
 
 Run `yarn tsc --init` to init a tsconfig.json file. (Only works with typescript installed globally)
 
@@ -200,11 +175,22 @@ Add this line to the tsconfig.json file
 }
 ```
 
-You can convert your code just by running `yarn tsc` and the files should be in the build directory.
+You can transpile your code just by running `yarn tsc` and the files should be in the dist directory.
+
+For automated transpiles I'll use __ts-node-dev__.
+Install it by running `yarn add ts-node-dev --d`.
+
+Add this line to your packge.json file.
+```json
+  "scripts": {
+    "dev:server": "ts-node-dev --respawn --transpileOnly src/index.ts"
+  },
+```
+Now run `yarn dev:server`. Your project is running, it transpiles automatically at every code update.
 
 ### Transpile - sucrase + nodemon
 
-**Sucrase doesn't support decorators (@ Like the ones in TypeORM)**
+**Sucrase doesn't support decorators (Like the ones in TypeORM)**
 
 `yarn add sucrase nodemon -D` - Installs sucrase and nodemon as a dev dependencies.
 
@@ -250,9 +236,7 @@ Points out error in TS code and corrects then.
 
 Install the extension ESLint.
 
-Run `yarn add eslint -D` to install eslint.
-
-Run `yarn add @typescript-eslint/parser @typescript-eslint/eslint-plugin -D` to install the parser and the plugin for TypeScript.
+Run `yarn add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin` to install.
 
 To initialize run `yarn eslint --init` and configure it.
 
@@ -284,7 +268,7 @@ Respond the following questions:
 
   Select **Yes**
 
-Now you can delete package-lock.json that was created and run `yarn`.
+Now you can delete package-lock.json and run `yarn`
 
 Add line to .eslintrc.js
 ```js
@@ -313,6 +297,7 @@ All done, now TypeScript is running with ESLint :ok_hand:
 ### How I learned
 
 * https://www.youtube.com/watch?v=aTf8QTjw4RE
+
 
 <h2 align="center">Prettier</h2>
 
