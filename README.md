@@ -61,10 +61,11 @@ For more control over the verions installed download via chocolatey.
 
 ### Using NodeJS and npm
 
-You can run these in your command line.
-
+You can run these commands in the command line:
 `npm init` - Creates a package.json file in the current folder.
+
 `npm install` - Adds dependencies to the package.json file and install them at the node_modules folder.
+
 `node index.js` - Runs the index.js file in NodeJS.
 
 The `package.json` file is where your project settings are, you can create custom Node commands by editing the `scripts` part.
