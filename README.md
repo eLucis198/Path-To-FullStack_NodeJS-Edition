@@ -11,9 +11,6 @@ This file was various things, now it turned in a tutorial on how to use some of 
 * **[EXTENSIONS](#EXTENSIONS)**
 * **[DONE](#DONE)**
 * **[DOING](#DOING)**
-    * [dotenv](#dotenv)
-    * [TypeORM](#TypeORM)
-    * [Jest](#Jest)
 
 # EXTENSIONS
 
@@ -41,7 +38,7 @@ Greatly improves the icons for your files.
 
 # DONE
 
-Technologies that I have already learned in some way and already integrated into the project.
+**Technologies that I have already learned in some way and already integrated into the project.**
 
 * [NodeJS and npm](#NodeJS)
 * [Yarn](#Yarn)
@@ -332,9 +329,13 @@ extends: [
   'standard'
 ],
 ```
-<h1 align="center">DOING</h1>
+# DOING
 
-<p align="center"><bold>Technologies that I'm tryng to learn right now.</bold></p.>
+**Technologies that I'm tryng to learn right now.**
+
+* [dotenv](#dotenv)
+* [TypeORM](#TypeORM)
+* [Jest](#Jest)
 
 <h2 align="center">dotenv</h2>
 
@@ -351,6 +352,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 ```
+
+Now your file called `.env` is being used by your project.
 
 ### How I learned
 
