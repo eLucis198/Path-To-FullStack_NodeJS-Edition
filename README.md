@@ -422,24 +422,26 @@ Run `yarn add knex` to install.
 
 Run `yarn add pg` to add database drivers.
 
+```ts
+// DATABASE_URL env should follow this format:
+// postgres://user_name:password@ipaddress:port/table
+// Example: postgres://jimmy:password@localhost:5432/pg_database
+```
+
 Create a file named `knexfile.ts` in the root folder.
 
 Example:
 ```ts
+import dotenv from 'dotenv'
 import path from 'path'
+dotenv.config()
 
 module.exports = {
   development: {
     client: process.env.DB_CLIENT,
-    connection: {
-      host: process.env.DB_HOST,
-      port: process.env.DB_PORT,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_DATABASE
-    },
+    connection: process.env.DB_URL,
     migrations: {
-      direcroty: path.resolve(__dirname, 'src', 'database', 'migrations')
+      directory: path.resolve(__dirname, 'src', 'database', 'migrations')
     }
   }
 }
@@ -453,19 +455,15 @@ import knex from 'knex'
 
 const connection = knex({
   client: process.env.DB_CLIENT,
-  connection: {
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE
-  }
+  connection: process.env.DB_URL
 })
 
 export default connection
 ```
 
 Knex ready for use :thumbsup:
+
+You can run `yarn knex migrate:make migration_name -x ts` to create migrations.
 
 ### Migrations
 
