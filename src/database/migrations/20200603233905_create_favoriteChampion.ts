@@ -3,7 +3,7 @@ import Knex from 'knex'
 export async function up (knex: Knex): Promise<any> {
   return knex.schema.createTable('favoriteChampion', table => {
     table.increments('id').primary()
-    table.integer('user_id').notNullable().references('id').inTable('appUser')
+    table.integer('user_id').notNullable().references('id').inTable('loginUser')
     table.integer('champion_id').notNullable().references('id').inTable('champion')
   })
 }
