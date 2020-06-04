@@ -1,12 +1,15 @@
 import { Request, Response } from 'express'
-
+import knex from '../database/connection'
 class ChampionsController {
   public async index (req: Request, res: Response): Promise<Response> {
-    return res.send('Hello World index')
+    const champions = await knex('champion').select('*')
+    return res.json(champions)
   }
 
   public async show (req: Request, res: Response): Promise<Response> {
-    return res.send('Hello World show')
+    const { id } = req.params
+    const champions = await knex('champion').select('*').where('id', id)
+    return res.json(champions)
   }
 
   public async create (req: Request, res: Response): Promise<Response> {
@@ -18,7 +21,7 @@ class ChampionsController {
   }
 
   public async delete (req: Request, res: Response): Promise<Response> {
-    return res.send('Hello World delete')
+    return res.send('Hello World delete ')
   }
 }
 

@@ -1,8 +1,27 @@
 import Knex, { QueryBuilder } from 'knex'
 import fetch from 'node-fetch'
 
+interface champion {
+  name: string
+}
+
 export async function seed (knex: Knex) {
   await knex('champion').del()
+  await fetch('https://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion.json')
+    .then(res => res.json())
+    .then(async json => {
+      const keys = Object.keys(json.data)
+      const champs: Array<champion> = []
+      keys.forEach((key) => {
+        json.data.champion = json.data[key]
+        champs.push({ name: json.data[key].name })
+      })
+      await knex('champion').insert(champs)
+    })
+}
+
+/* export async function seed (knex: Knex) {
+  knex('champion').del()
   await fetch('https://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion.json')
     .then(res => res.json())
     .then(async json => {
@@ -14,7 +33,7 @@ export async function seed (knex: Knex) {
       }
       await knex('champion').insert(champs)
     })
-}
+} */
 
 /* export async function seed (knex: Knex) {
   await knex('favoriteChampion').del()

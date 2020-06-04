@@ -4,14 +4,17 @@
   "description": "Everything that i'm learning",
   "main": "index.js",
   "scripts": {
+
     "build": "tsc",
     "watch": "tsc --watch",
+
     "basic:server": "ts-node-dev --respawn --transpileOnly src/server.ts",
-    "prod:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env",
-    "dev:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env.dev",
-    "test:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env.test",
+    "dev:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts",
+
     "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
-    "knex:seed": "knex --knexfile knexfile.ts seed:run"
+    "knex:seed": "knex --knexfile knexfile.ts seed:run",
+    "knex:rollback": "knex --knexfile knexfile.ts migrate:rollback"
+
   },
   "repository": {
     "type": "git",
