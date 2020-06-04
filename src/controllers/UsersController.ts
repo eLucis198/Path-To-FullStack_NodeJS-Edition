@@ -9,8 +9,16 @@ class UsersController {
 
   public async show (req: Request, res: Response): Promise<Response> {
     const { id } = req.params
-    const user = await knex('loginUser').where('id', id)
-    return res.json(user)
+    const user = await knex('loginUser').where('id', id).first()
+    if (!user) {
+      return res.send(400).json({ message: 'Not found' })
+    }
+    const champs = await knex('champion')
+      .join('favoriteChampion', 'champion.id', '=', 'favoriteChampion.champion_id')
+      .where('favoriteChampion.user_id', id)
+      .orderBy('favoriteChampion.champion_id')
+
+    return res.json({ user, champs })
   }
 
   public async create (req: Request, res: Response): Promise<Response> {
