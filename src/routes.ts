@@ -9,9 +9,6 @@ const usersController = new UsersController()
 
 routes.get('/champions', championsController.index)
 routes.get('/champions/:id', championsController.show)
-routes.post('/champions', championsController.create)
-routes.put('/champions/:id', championsController.update)
-routes.delete('/champions/:id', championsController.delete)
 
 routes.get('/users', usersController.index)
 routes.get('/users/:id', usersController.show)
