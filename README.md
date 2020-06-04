@@ -19,6 +19,7 @@ Extensions for Visual Studio Code.
 * [EditorConfig for VS Code](#EditorConfig)
 * [ESLint Extension](#Eslint-Extension)
 * [Material Icon Theme](#Material-Icon-Theme)
+* [SQLite](#SQLite)
 
 <h2 align="center">EditorConfig</h2>
 
@@ -36,6 +37,12 @@ Just the extension part of ESLint, the entire configuration is described in the 
 
 Greatly improves the icons for your files.
 
+<h2 align="center">SQLite</h2>
+
+> VSCode extension to explore and query SQLite databases.
+
+You can navigate SQLite databases via Visual Studio Code.
+
 # DONE
 
 **Technologies that I have already learned in some way and already integrated into the project.**
@@ -46,7 +53,7 @@ Greatly improves the icons for your files.
 * [Express](#Express)
 * [TypeScript](#TypeScript)
 * [ESLint](#ESLint)
-* [Prettier](#Prettier) (Not using)
+* [Prettier](#Prettier) (Not Using)
 
 <h2 align="center">NodeJS</h2>
 
@@ -229,7 +236,7 @@ Alter package.json
 
 You need to install the "types" of your dependencies for the IntelliSense to work.
 
-`npm install @types/express -D` - Install the types of express as a development dependency.
+`yarn add @types/express -D` - Install the types of express as a development dependency.
 
 ### How I learned
 
@@ -334,30 +341,170 @@ extends: [
 **Technologies that I'm tryng to learn right now.**
 
 * [dotenv](#dotenv)
-* [TypeORM](#TypeORM)
+* [knex.js](#knex.js)
+* [TypeORM](#TypeORM)(Not Using)
 * [Jest](#Jest)
 
 <h2 align="center">dotenv</h2>
 
 > Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 
-### Setup
+Basically dotenv's purpose is for you to be able to use environment variables inside your code.
 
-`yarn add dotenv`
+This environment variables are saved in a file at the project root folder caller `.env`.
 
-Import and call it as soon as possible in your project
+### Setup and Use
 
-```ts
-import dotenv from 'dotenv'
+Run `yarn add dotenv` to install it.
 
-dotenv.config()
+Now you'll create a new `.env` file at the root off your project.
+This is the file syntax:
+```
+PORT=3333
+
+# DATABASE
+CLIENT=postgres
+USER=user
+MY_VARIABLE=variableText
 ```
 
-Now your file called `.env` is being used by your project.
+***
+
+To use dotenv you'll need to call it as soon as possible in your project
+```ts
+require('dotenv').config()
+```
+Or pass some options for multiple `.env` files
+```ts
+require('dotenv').config({
+  path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env.dev'
+})
+```
+If you're using `import`, **dotenv recommends** that you use preload.
+
+Edit your package.json file:
+```json
+"scripts": {
+  "dev:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts",
+  "dev:serverOld": "ts-node-dev --respawn --transpileOnly src/server.ts",
+}
+```
+The require of dotenv is done in the script `--require dotenv/config`.
+
+You also can call the `.env` file of your choice by adding `dotenv_config_path=.env` to your script:
+```json
+{
+  "scripts":{
+    "dev:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env",
+    "dev:serverOld": "ts-node-dev --respawn --transpileOnly src/server.ts",
+  }
+}
+```
+I just want to remember that you should always put your `.env` files inside `.gitignore`.
+
+Although dotenv doesn't recommend using multiple files, I reckon that it makes some things easier, but you still should avoid it as much as possible.
 
 ### How I learned
 
+* https://github.com/motdotla/dotenv
 * https://www.youtube.com/watch?v=2G_mWfG0DZE
+
+<h2 align="center">knex.js</h2>
+
+> A batteries-included, multi-dialect query builder for Node.js.
+
+What you'll use to manipulate your databases.
+
+### Setup
+
+Run `yarn add knex` to install.
+
+Run `yarn add pg` to add database drivers.
+
+```ts
+// DATABASE_URL env should follow this format:
+// postgres://user_name:password@ipaddress:port/table
+// Example: postgres://jimmy:password@localhost:5432/pg_database
+```
+
+Create a file named `knexfile.ts` in the root folder.
+
+Example:
+```ts
+import dotenv from 'dotenv'
+import path from 'path'
+dotenv.config()
+
+module.exports = {
+  development: {
+    client: process.env.DB_CLIENT,
+    connection: process.env.DB_URL,
+    migrations: {
+      directory: path.resolve(__dirname, 'src', 'database', 'migrations')
+    }
+  }
+}
+```
+
+Create a file named `connection.ts` inside `src/database`.
+
+Example:
+```ts
+import knex from 'knex'
+
+const connection = knex({
+  client: process.env.DB_CLIENT,
+  connection: process.env.DB_URL
+})
+
+export default connection
+```
+
+Knex ready for use :thumbsup:
+
+### Migrations
+
+You can run `yarn knex migrate:make migration_name` to create migration files.
+
+Example:
+```ts
+import Knex from 'knex'
+
+export async function up (knex: Knex): Promise<any> {
+  return knex.schema.createTable('champion', table => {
+    table.increments('id').primary()
+    table.string('name').notNullable()
+  })
+}
+
+export async function down (knex: Knex): Promise<any> {
+  return knex.schema.dropTable('champion')
+}
+```
+
+To run the migrations create the script.
+```json
+{
+  "scripts": {
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+  }
+}
+```
+
+You can run it like this `yarn knex:migrate` or set the environment `yarn knex:migrate --env staging`.
+
+### Seeds
+
+
+
+### How I learned
+
+* http://knexjs.org/
+* http://knexjs.org/#esm-module-interop
+* https://github.com/knex/knex
+* https://www.youtube.com/watch?v=U7GjS3FuSkA&t
+
+### Setup
 
 <h2 align="center">Jest</h2>
 
