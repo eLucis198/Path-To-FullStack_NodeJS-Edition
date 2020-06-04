@@ -19,6 +19,7 @@ Extensions for Visual Studio Code.
 * [EditorConfig for VS Code](#EditorConfig)
 * [ESLint Extension](#Eslint-Extension)
 * [Material Icon Theme](#Material-Icon-Theme)
+* [SQLite](#SQLite)
 
 <h2 align="center">EditorConfig</h2>
 
@@ -35,6 +36,12 @@ Just the extension part of ESLint, the entire configuration is described in the 
 <h2 align="center">Material Icon Theme</h2>
 
 Greatly improves the icons for your files.
+
+<h2 align="center">SQLite</h2>
+
+> VSCode extension to explore and query SQLite databases.
+
+You can navigate SQLite databases via Visual Studio Code.
 
 # DONE
 
@@ -402,6 +409,75 @@ Although dotenv doesn't recommend using multiple files, I reckon that it makes s
 * https://github.com/motdotla/dotenv
 * https://www.youtube.com/watch?v=2G_mWfG0DZE
 * https://medium.com/@lusbuab/using-dotenv-with-jest-7e735b34e55f
+
+<h2 align="center">knex.js</h2>
+
+> A batteries-included, multi-dialect query builder for Node.js.
+
+What you'll use to manipulate your databases.
+
+### Setup
+
+Run `yarn add knex` to install.
+
+Run `yarn add pg` to add database drivers.
+
+Create a file named `knexfile.ts` in the root folder.
+
+Example:
+```ts
+import path from 'path'
+
+module.exports = {
+  development: {
+    client: process.env.DB_CLIENT,
+    connection: {
+      host: process.env.DB_HOST,
+      port: process.env.DB_PORT,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE
+    },
+    migrations: {
+      direcroty: path.resolve(__dirname, 'src', 'database', 'migrations')
+    }
+  }
+}
+```
+
+Create a file named `connection.ts` inside `src/database`.
+
+Example:
+```ts
+import knex from 'knex'
+
+const connection = knex({
+  client: process.env.DB_CLIENT,
+  connection: {
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE
+  }
+})
+
+export default connection
+```
+
+Knex ready for use :thumbsup:
+
+### Migrations
+
+
+
+### How I learned
+
+* http://knexjs.org/
+* https://github.com/knex/knex
+* https://www.youtube.com/watch?v=U7GjS3FuSkA&t
+
+### Setup
 
 <h2 align="center">Jest</h2>
 

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc --watch",
-    "basic:server":"ts-node-dev --respawn --transpileOnly src/server.ts",
+    "basic:server": "ts-node-dev --respawn --transpileOnly src/server.ts",
     "prod:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env",
     "dev:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env.dev",
     "test:server": "ts-node-dev --require dotenv/config --respawn --transpileOnly src/server.ts dotenv_config_path=.env.test"
@@ -38,7 +38,9 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "knex": "^0.21.1",
     "pg": "^8.2.1",
+    "sqlite3": "^4.2.0",
     "ts-node-dev": "^1.0.0-pre.44"
   }
 }
