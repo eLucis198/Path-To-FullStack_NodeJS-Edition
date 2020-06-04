@@ -1,8 +1,6 @@
 import knex from 'knex'
+import { development, staging } from '../../knexfile'
 
-const connection = knex({
-  client: process.env.DB_CLIENT,
-  connection: process.env.DB_URL
-})
+const connection = knex(process.env.NODE_ENV === 'development' ? development : staging)
 
 export default connection

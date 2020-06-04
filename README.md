@@ -463,15 +463,45 @@ export default connection
 
 Knex ready for use :thumbsup:
 
-You can run `yarn knex migrate:make migration_name -x ts` to create migrations.
-
 ### Migrations
+
+You can run `yarn knex migrate:make migration_name` to create migration files.
+
+Example:
+```ts
+import Knex from 'knex'
+
+export async function up (knex: Knex): Promise<any> {
+  return knex.schema.createTable('champion', table => {
+    table.increments('id').primary()
+    table.string('name').notNullable()
+  })
+}
+
+export async function down (knex: Knex): Promise<any> {
+  return knex.schema.dropTable('champion')
+}
+```
+
+To run the migrations create the script.
+```json
+{
+  "scripts": {
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+  }
+}
+```
+
+You can run it like this `yarn knex:migrate` or set the environment `yarn knex:migrate --env staging`.
+
+### Seeds
 
 
 
 ### How I learned
 
 * http://knexjs.org/
+* http://knexjs.org/#esm-module-interop
 * https://github.com/knex/knex
 * https://www.youtube.com/watch?v=U7GjS3FuSkA&t
 
