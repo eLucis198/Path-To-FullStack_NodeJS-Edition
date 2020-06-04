@@ -9,7 +9,7 @@ export async function seed (knex: Knex): Promise<any> {
         { name: 'Gabriel', username: 'llLennyll', password: 'senha2' },
         { name: 'Carlos', username: 'carloswalker', password: 'senha3' },
         { name: 'Taciany', username: 'sadredfox', password: 'senha4' },
-        { name: 'Loize', username: 'lougabri', password: 'senha5' }
+        { name: 'Loize', username: 'louGabri', password: 'senha5' }
       ])
     })
 }
