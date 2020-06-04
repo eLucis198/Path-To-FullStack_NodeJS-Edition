@@ -408,7 +408,6 @@ Although dotenv doesn't recommend using multiple files, I reckon that it makes s
 
 * https://github.com/motdotla/dotenv
 * https://www.youtube.com/watch?v=2G_mWfG0DZE
-* https://medium.com/@lusbuab/using-dotenv-with-jest-7e735b34e55f
 
 <h2 align="center">knex.js</h2>
 
