@@ -2,46 +2,16 @@
 
 <p align="center">This is my personal repository used to learn new technologies related to NodeJS web development.</p>
 
+**I'm moving this file contents to the repository wiki**
+
 ### What is this README.md?
 
 This file was various things, now it turned in a tutorial on how to use some of the best technologies in your NodeJS web application.
 
 ## Table of contents
 
-* **[EXTENSIONS](#EXTENSIONS)**
 * **[DONE](#DONE)**
 * **[DOING](#DOING)**
-
-# EXTENSIONS
-
-Extensions for Visual Studio Code.
-
-* [EditorConfig for VS Code](#EditorConfig)
-* [ESLint Extension](#Eslint-Extension)
-* [Material Icon Theme](#Material-Icon-Theme)
-* [SQLite](#SQLite)
-
-<h2 align="center">EditorConfig</h2>
-
-> This plugin attempts to override user/workspace settings with settings found in .editorconfig files.
-
-Makes it possible to share editor settings via a file (`.editorconfig`) located in the root directory of your project.
-
-<h2 align="center">ESLint Extension</h2>
-
-> Integrates ESLint into VS Code.
-
-Just the extension part of ESLint, the entire configuration is described in the [ESLint](#ESLint) section.
-
-<h2 align="center">Material Icon Theme</h2>
-
-Greatly improves the icons for your files.
-
-<h2 align="center">SQLite</h2>
-
-> VSCode extension to explore and query SQLite databases.
-
-You can navigate SQLite databases via Visual Studio Code.
 
 # DONE
 
