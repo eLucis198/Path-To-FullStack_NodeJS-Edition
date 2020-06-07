@@ -17,36 +17,12 @@ This file was various things, now it turned in a tutorial on how to use some of 
 
 **Technologies that I have already learned in some way and already integrated into the project.**
 
-* [NodeJS and npm](#NodeJS)
 * [Yarn](#Yarn)
 * [Git and GitHub](#Git-and-GitHub)
 * [Express](#Express)
 * [TypeScript](#TypeScript)
 * [ESLint](#ESLint)
 * [Prettier](#Prettier) (Not Using)
-
-<h2 align="center">NodeJS</h2>
-
-> [Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.](https://nodejs.org/en/)
-
-NodeJS is your runtime, npm your package manager.
-
-### Setup
-
-Follow through the [installation](https://nodejs.org/en/) and both will be installed and ready to use.
-For more control over the verions installed download via chocolatey.
-
-### Using NodeJS and npm
-
-You can run these commands in the command line:
-
-  `npm init` - Creates a package.json file in the current folder.
-
-  `npm install` - Adds dependencies to the package.json file and install them at the node_modules folder.
-
-  `node index.js` - Runs the index.js file in NodeJS.
-
-The `package.json` file is where your project settings are, you can create custom Node commands by editing the `scripts` part.
 
 <h2 align="center">Yarn</h2>
 
