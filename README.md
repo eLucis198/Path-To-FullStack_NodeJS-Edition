@@ -1,98 +1,12 @@
-<h1 align="center">Path To FullStack</h1>
-
-<p align="center">This is my personal repository used to learn new technologies related to NodeJS web development.</p>
-
-**I'm moving this file contents to the repository wiki**
-
-### What is this README.md?
-
-This file was various things, now it turned in a tutorial on how to use some of the best technologies in your NodeJS web application.
-
-## Table of contents
-
-* **[DONE](#DONE)**
-* **[DOING](#DOING)**
+**I'm moving this file contents to the repository [wiki](https://github.com/eLucis198/Path-To-FullStack_NodeJS-Edition/wiki)**
 
 # DONE
 
 **Technologies that I have already learned in some way and already integrated into the project.**
 
-* [Yarn](#Yarn)
-* [Git and GitHub](#Git-and-GitHub)
 * [Express](#Express)
 * [TypeScript](#TypeScript)
 * [ESLint](#ESLint)
-* [Prettier](#Prettier) (Not Using)
-
-<h2 align="center">Yarn</h2>
-
-> Yarn is a package manager that doubles down as project manager. Whether you work on one-shot projects or large monorepos, as a hobbyist or an enterprise user, we've got you covered.
-
-Well, I just think Yarn is easier to use.
-
-`npm install -g yarn` - Installs Yarn globally.
-
-`yarn init` - Creates the package.json file.
-
-Run `Get-ExecutionPolicy` on PowerShell, if the result is `Restricted` then run `Set-ExecutionPolicy RemoteSigned` so you can use Yarn.
-
-If you ever use npm in your repo you can delete the package-lock.json file and run `yarn` to install everything again.
-
-<h2 align="center">Git and GitHub</h2>
-
-> [Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.](https://git-scm.com/)
-
-Git and GitHub are used to keep your code safe by allowing you to create multiple versions of your repo and backing it up to the cloud.
-
-### Setup
-
-* [Git can be downloaded here.](https://git-scm.com/download)
-* [GitHub home page can be accessed here.](https://github.com/)
-
-### Using Git
-
-`.gitignore` is a file that you can create in the root folder of your project that tells Git the files that should be ignored
-
-`git config credential.helper store` - This command will save your credential in plain text.
-
-`git config --global credential.helper cache` - Will save your credential for 15 minutes by default, you can define the timeout.
-
-`git config --global credential.helper 'cache --timeout=3600'` - Sets the timeout to 1 hour.
-
-`git init` - Initializes a git repository locally.
-
-`git add .` - Stores snapshot temporary in the index.
-
-`git commit` - Permanently stores index contents.
-
-`git log` - Logs commits.
-
-`git branch feature/name` - Creates a branch named **feature/name**.
-
-`git checkout feature/name` - Switchs to hte branch named **feature/name**.
-
-`git merge feature/name` - Merges the branch named **featue/name** to the master.
-
-`git branch -D feature/name` - Deletes the branch named **featue/name**.
-
-`git remote add origin https://github.com/eLucis198/path-to-fullstack.git` - Syncs to your GitHub repo.
-
-`git push -u origin master` - Pushes master branch to GitHub.
-
-`git pull origin master` - Pulls from GitHub to the master branch .
-
-### GitHub Desktop
-
-So I can focus more in coding I'm using GitHub Desktop 'cause it's way easier :stuck_out_tongue_closed_eyes:.
-
-### How I learned
-
-* https://git-scm.com/docs/gittutorial
-
-* https://www.youtube.com/watch?v=MW7hrQe6aYo
-
-* https://www.youtube.com/watch?v=2T2l2rGRzXs&t
-
 
 <h2 align="center">Express</h2>
 
@@ -264,24 +178,6 @@ All done, now TypeScript is running with ESLint :ok_hand:
 
 * https://www.youtube.com/watch?v=aTf8QTjw4RE
 
-<h2 align="center">Prettier</h2>
-
- **I don't know if it's a new update but ESLint is already correcting the code, so I won't use Prettier.**
-
-> Prettier is an opinionated code formatter. It enforces a consistent style by parsing your code and re-printing it with its own rules that take the maximum line length into account, wrapping code when necessary.
-
-### Setup
-
-Run `yarn add prettier eslint-config-prettier eslint-plugin-prettier -D`.
-
-Add line to .eslintrc.js
-```js
-extends: [
-  'plugin:@typescript-eslint/recommended',
-  'prettier/@typescript-eslint',
-  'standard'
-],
-```
 # DOING
 
 **Technologies that I'm tryng to learn right now.**
